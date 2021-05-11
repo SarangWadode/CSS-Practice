@@ -1,3 +1,3 @@
-# CSS-100Days
+# 100-Days-CSS
 
-css-practice this repository is for css practice
+As the name says this repository is for css practice here I will be uploading some small css works.
