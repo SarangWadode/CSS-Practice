@@ -1,4 +1,8 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+:root {
+  --animduration: 1s;
+}
+
 .frame {
   position: absolute;
   top: 50%;
@@ -24,54 +28,128 @@
   transform: translate(-50%, -50%);
 }
 
-.container {
-  position: relative;
-  background: black;
-  width: 100px;
-  height: 100px;
-}
-.checkbox {
-  width: 70px;
-  height: 55px;
-  position: relative;
-  top: 20px;
-  left: 15px;
-  z-index: 1;
+.lines {
+  width: 86px;
+  height: 60px;
   cursor: pointer;
-  /* appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none; */
+  position: relative;
 }
-.checkbox:hover,
-checkbox:focus {
-  outline: none;
-}
+
 .bar {
-  position: fixed;
-  background-color: #fff;
-  width: 70px;
-  height: 7px;
-  left: 15px;
+  width: 86px;
+  height: 10px;
+  background: #fff;
+  position: absolute;
   border-radius: 5px;
-  transition: top 1s, transform 1s, display 1s;
+  display: block;
+  animation-fill-mode: forwards;
 }
+
 .one {
-  top: 23px;
+  top: 5px;
 }
 .two {
-  top: 43px;
-  transition: display 1s;
+  top: 25px;
 }
 .three {
-  top: 63px;
+  top: 45px;
 }
-.checkbox:checked ~ .one {
-  top: 43px;
+
+.cross .one {
+  animation-name: cross1;
+  animation-duration: var(--animduration);
 }
-.checkbox:checked ~ .two {
-  display: none;
-  top: 30px;
+@keyframes cross1 {
+  0% {
+    top: 5px;
+  }
+  50% {
+    top: 25px;
+    transform: rotate(0deg);
+  }
+  100% {
+    top: 25px;
+    transform: rotate(405deg);
+  }
 }
-.checkbox:checked ~ .three {
-  top: 43px;
+.reverse .one {
+  animation-name: rev1;
+  animation-duration: var(--animduration);
+}
+@keyframes rev1 {
+  0% {
+    top: 25px;
+    transform: rotate(405deg);
+  }
+  50% {
+    transform: rotate(0deg);
+    top: 25px;
+  }
+  100% {
+    transform: rotate(0deg);
+    top: 5px;
+  }
+}
+
+.cross .two {
+  animation-name: cross2;
+  animation-duration: var(--animduration);
+}
+@keyframes cross2 {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.reverse .two {
+  animation-name: rev2;
+  animation-duration: var(--animduration);
+}
+@keyframes rev2 {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.cross .three {
+  animation-name: cross3;
+  animation-duration: var(--animduration);
+}
+@keyframes cross3 {
+  0% {
+    top: 45px;
+  }
+  50% {
+    top: 25px;
+    transform: rotate(0deg);
+  }
+  100% {
+    top: 25px;
+    transform: rotate(-405deg);
+  }
+}
+.reverse .three {
+  animation-name: rev3;
+  animation-duration: var(--animduration);
+}
+@keyframes rev3 {
+  0% {
+    transform: rotate(-405deg);
+    top: 25px;
+  }
+  50% {
+    transform: rotate(0deg);
+    top: 25px;
+  }
+  100% {
+    transform: rotate(0deg);
+    top: 45px;
+  }
 }
