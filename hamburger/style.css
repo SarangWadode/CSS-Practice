@@ -3,6 +3,10 @@
   --animduration: 1s;
 }
 
+* {
+  user-select: none;
+}
+
 .frame {
   position: absolute;
   top: 50%;
