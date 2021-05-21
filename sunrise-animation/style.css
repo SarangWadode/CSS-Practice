@@ -35,7 +35,7 @@
   z-index: 3;
   position: relative;
   overflow: hidden;
-  animation: fade-out 4s ease-in-out infinite;
+  animation: fade-out 4s linear infinite;
 }
 @keyframes fade-out {
   0% {
@@ -58,10 +58,9 @@
   position: absolute;
   left: 60px;
   top: 20px;
-  z-index: -1;
   border-radius: 50%;
   transform: rotate(0deg);
-  transform-origin: 170% 470%;
+  transform-origin: 200% 470%;
   animation-name: sunrise;
   animation-duration: 4s;
   transition-timing-function: cubic-bezier(0.4, 0, 0.49, 1);
@@ -72,7 +71,7 @@
     transform: rotate(-55deg);
   }
   30% {
-    tranform: rotate(-30deg);
+    tranform: rotate(-40deg);
   }
   70% {
     tranform: rotate(30deg);
@@ -109,7 +108,7 @@
   }
 }
 .right {
-  width: 110px;
+  width: 100px;
   height: 87px;
   position: absolute;
   top: 32.5%;
@@ -117,4 +116,30 @@
   clip-path: polygon(30% 100%, 100% 100%, 0% 0%);
   background: rgb(233, 229, 229);
   animation: pyramid-shade 4s cubic-bezier(0.4, 0, 0.49, 1) infinite reverse;
+}
+.shadow {
+  width: 385px;
+  height: 350px;
+  background: rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 70%;
+  left: -76px;
+  animation: shadow 4s linear infinite;
+}
+@keyframes shadow {
+  0% {
+    clip-path: polygon(30% 0, 70% 0, 100% 0%);
+  }
+  30% {
+    clip-path: polygon(30% 0, 70% 0, 65% 10%);
+  }
+  50% {
+    clip-path: polygon(30% 0, 70% 0, 35% 10%);
+  }
+  75% {
+    clip-path: polygon(30% 0, 70% 0, 15% 10%);
+  }
+  100% {
+    clip-path: polygon(30% 0, 70% 0, 0% 0%);
+  }
 }
