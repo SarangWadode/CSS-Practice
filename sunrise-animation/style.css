@@ -8,53 +8,113 @@
   margin-top: -200px;
   margin-left: -200px;
   border-radius: 2px;
-	box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
-	overflow: hidden;
-  background: #000;
+  box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background: #272c34;
   color: #333;
-	font-family: 'Open Sans', Helvetica, sans-serif;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+  font-family: "Open Sans", Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  z-index: 3;
 }
 
 .center {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
 }
 .wraper {
-	width: 230px;
-	height: 230px;
-	background: linear-gradient( rgb(135, 215, 233, 1) 70%, rgb(218, 213, 141, 1) 30% );
-	border-radius: 50%;
+  width: 230px;
+  height: 230px;
+  background: linear-gradient(
+    rgb(135, 215, 233, 1) 70%,
+    rgb(218, 213, 141, 1) 30%
+  );
+  border-radius: 50%;
+  z-index: 3;
+  position: relative;
+  overflow: hidden;
+  animation: fade-out 4s ease-in-out infinite;
+}
+@keyframes fade-out {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 .sun {
-	width: 35px;
-	height: 35px;
-	background: #FFEF00;
-	position: absolute;
-	left: 60px;
-	top: 20px;
-	border-radius: 50%;
-	transform: rotate(0deg);
-	transform-origin: 170% 470%;
-	animation-name: sunrise;
-	animation-duration: 4s;
-	transition-timing-function: cubic-bezier(0.4, 0, 0.49, 1);
-	animation-iteration-count: infinite;
+  width: 35px;
+  height: 35px;
+  background: #ffef00;
+  position: absolute;
+  left: 60px;
+  top: 20px;
+  z-index: -1;
+  border-radius: 50%;
+  transform: rotate(0deg);
+  transform-origin: 170% 470%;
+  animation-name: sunrise;
+  animation-duration: 4s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.49, 1);
+  animation-iteration-count: infinite;
 }
 @keyframes sunrise {
-	0% {
-		transform: rotate(-55deg);
-	}
-	30% {
-		tranform: rotate(-30deg);
-	}
-	70% {
-		tranform: rotate(30deg);
-	}
-	100% {
-		transform: rotate(65deg);
-	}
+  0% {
+    transform: rotate(-55deg);
+  }
+  30% {
+    tranform: rotate(-30deg);
+  }
+  70% {
+    tranform: rotate(30deg);
+  }
+  100% {
+    transform: rotate(65deg);
+  }
+}
+.left {
+  width: 110px;
+  height: 87px;
+  position: absolute;
+  top: 32.5%;
+  left: 40px;
+  background: #f4f4f4;
+  clip-path: polygon(0% 100%, 100% 100%, 50% 0%);
+  animation-name: pyramid-shade;
+  animation-duration: 4s;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.49, 1);
+  animation-iteration-count: infinite;
+}
+@keyframes pyramid-shade {
+  0% {
+    background: #f4f4f4;
+  }
+  30% {
+    background: #f4f4f4;
+  }
+  70% {
+    background: rgb(233, 229, 229);
+  }
+  100% {
+    background: rgb(233, 229, 229);
+  }
+}
+.right {
+  width: 110px;
+  height: 87px;
+  position: absolute;
+  top: 32.5%;
+  left: 95px;
+  clip-path: polygon(30% 100%, 100% 100%, 0% 0%);
+  background: rgb(233, 229, 229);
+  animation: pyramid-shade 4s cubic-bezier(0.4, 0, 0.49, 1) infinite reverse;
 }
