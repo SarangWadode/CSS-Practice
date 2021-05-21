@@ -1,0 +1,60 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+	box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+	overflow: hidden;
+  background: #000;
+  color: #333;
+	font-family: 'Open Sans', Helvetica, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.wraper {
+	width: 230px;
+	height: 230px;
+	background: linear-gradient( rgb(135, 215, 233, 1) 70%, rgb(218, 213, 141, 1) 30% );
+	border-radius: 50%;
+}
+.sun {
+	width: 35px;
+	height: 35px;
+	background: #FFEF00;
+	position: absolute;
+	left: 60px;
+	top: 20px;
+	border-radius: 50%;
+	transform: rotate(0deg);
+	transform-origin: 170% 470%;
+	animation-name: sunrise;
+	animation-duration: 4s;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.49, 1);
+	animation-iteration-count: infinite;
+}
+@keyframes sunrise {
+	0% {
+		transform: rotate(-55deg);
+	}
+	30% {
+		tranform: rotate(-30deg);
+	}
+	70% {
+		tranform: rotate(30deg);
+	}
+	100% {
+		transform: rotate(65deg);
+	}
+}
