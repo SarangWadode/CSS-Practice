@@ -11,7 +11,7 @@
   border-radius: 2px;
   box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  background: #fff;
+  background: #e56262;
   color: #333;
   font-family: "Open Sans", Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -28,7 +28,7 @@
 .one {
   width: 120px;
   height: 120px;
-  background: rgb(70, 231, 78);
+  background: #fff;
   border-radius: 50%;
   position: absolute;
   top: -60px;
@@ -37,16 +37,13 @@
 }
 
 @keyframes circle1 {
-  0% {
+  0%,
+  10% {
+    box-shadow: 2px 2px 3px 2px rgb(0 0 0 / 20%);
     transform: scale(0);
   }
-  /* 20% {
-    transform: scale(1);
-  }
-  80% {
-    transform: scale(1);
-  } */
   100% {
+    box-shadow: 10px 10px 15px 0 rgb(0 0 0 / 30%);
     transform: scale(1);
   }
 }
@@ -56,33 +53,43 @@
   height: 80px;
   border-radius: 50%;
   position: absolute;
-  background: chartreuse;
+  top: -40px;
+  left: -40px;
+  background: #fff;
   animation: circle2 4s ease-in-out infinite alternate;
 }
 
 @keyframes circle2 {
-  0% {
+  0%,
+  40% {
+    box-shadow: 2px 2px 3px 2px rgb(0 0 0 / 20%);
     transform: scale(0);
   }
   100% {
+    box-shadow: 10px 10px 15px 0 rgb(0 0 0 / 30%);
     transform: scale(1);
   }
 }
 
 .three {
-  width: 50px;
-  height: 50px;
-  background: chocolate;
+  width: 40px;
+  height: 40px;
+  background: #fff;
   border-radius: 50%;
   position: absolute;
+  top: -20px;
+  left: -20px;
   animation: circle3 4s ease-in-out infinite alternate;
 }
 
 @keyframes circle3 {
-  0% {
+  0%,
+  70% {
+    box-shadow: 2px 2px 3px 2px rgb(0 0 0 / 20%);
     transform: scale(0);
   }
   100% {
+    box-shadow: 10px 10px 15px 0 rgb(0 0 0 / 30%);
     transform: scale(1);
   }
 }
