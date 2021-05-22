@@ -1,0 +1,88 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background: #fff;
+  color: #333;
+  font-family: "Open Sans", Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.one {
+  width: 120px;
+  height: 120px;
+  background: rgb(70, 231, 78);
+  border-radius: 50%;
+  position: absolute;
+  top: -60px;
+  left: -60px;
+  animation: circle1 4s ease-in-out infinite alternate;
+}
+
+@keyframes circle1 {
+  0% {
+    transform: scale(0);
+  }
+  /* 20% {
+    transform: scale(1);
+  }
+  80% {
+    transform: scale(1);
+  } */
+  100% {
+    transform: scale(1);
+  }
+}
+
+.two {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  position: absolute;
+  background: chartreuse;
+  animation: circle2 4s ease-in-out infinite alternate;
+}
+
+@keyframes circle2 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.three {
+  width: 50px;
+  height: 50px;
+  background: chocolate;
+  border-radius: 50%;
+  position: absolute;
+  animation: circle3 4s ease-in-out infinite alternate;
+}
+
+@keyframes circle3 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
