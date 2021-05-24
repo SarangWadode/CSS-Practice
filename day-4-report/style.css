@@ -107,6 +107,7 @@
   stroke-width: 2;
   stroke-linecap: round;
   position: absolute;
+  left: 17px;
 }
 
 .redline svg polyline {
@@ -114,7 +115,80 @@
 }
 
 .blueline svg polyline {
-  stroke: blue;
+  stroke: #7ba2ff;
+}
+
+.data [class^="point-"] {
+  width: 6px;
+  height: 6px;
+  position: absolute;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.data.redline [class^="point-"] {
+  background: #fa7373;
+  z-index: 10;
+}
+.redline .point-1 {
+  top: 42px;
+  left: 8px;
+}
+.redline .point-2 {
+  top: 10px;
+  left: 47px;
+}
+.redline .point-3 {
+  top: 20px;
+  left: 86px;
+}
+.redline .point-4 {
+  top: 8px;
+  left: 127px;
+}
+.redline .point-5 {
+  top: 35px;
+  left: 168px;
+}
+.redline .point-6 {
+  top: 45px;
+  left: 208px;
+}
+.redline .point-7 {
+  top: 15px;
+  left: 249px;
+}
+
+.data.blueline [class^="point-"] {
+  background: #7ba2ff;
+}
+.blueline .point-1 {
+  top: 58px;
+  left: 8px;
+}
+.blueline .point-2 {
+  top: 48px;
+  left: 47px;
+}
+.blueline .point-3 {
+  top: 62px;
+  left: 86px;
+}
+.blueline .point-4 {
+  top: 52px;
+  left: 127px;
+}
+.blueline .point-5 {
+  top: 58px;
+  left: 168px;
+}
+.blueline .point-6 {
+  top: 71px;
+  left: 208px;
+}
+.blueline .point-7 {
+  top: 61px;
+  left: 249px;
 }
 
 .footer {
