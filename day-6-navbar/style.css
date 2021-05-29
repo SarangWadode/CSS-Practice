@@ -2,6 +2,7 @@
 
 * {
   box-sizing: border-box;
+  user-select: none;
 }
 
 .frame {
@@ -33,7 +34,6 @@
   position: relative;
   width: 300px;
   height: 300px;
-  background: #fff;
 }
 
 .panel {
@@ -41,6 +41,13 @@
   height: 300px;
   background: #fff;
   box-shadow: 10px 10px 15px 0 rgb(0 0 0 / 30%);
+  position: absolute;
+  z-index: 10;
+  transition: all 0.5s ease-in-out;
+  transform: translate3d(0, 0, 0);
+}
+.panel.active {
+  transform: translate3d(120px, 0, 0);
 }
 
 .header {
@@ -121,7 +128,7 @@
 .search.active {
   opacity: 1;
   pointer-events: all;
-  left: 18;
+  left: 18px;
 }
 
 .notis {
@@ -191,5 +198,46 @@
 }
 
 .menu {
-  opacity: 0;
+  position: absolute;
+  width: 150px;
+  height: 270px;
+  background: #43627d;
+  top: 15px;
+  left: 0px;
+  font-size: 13px;
+  border-radius: 3px;
+  transition: all 0.5s ease-in-out;
+  transform: translate3d(40px, 0, 0);
+}
+.menu.active {
+  transform: translate3d(-13px, 0, 0);
+}
+.menu ul {
+  list-style-type: none;
+  width: 100%;
+  height: 100%;
+  padding: 15px 0;
+  position: absolute;
+  top: -15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.menu li {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  color: #93b2cd;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.menu ul li i {
+  padding-right: 10px;
+}
+.menu li:hover {
+  background: #385269;
+  color: #fff;
 }
